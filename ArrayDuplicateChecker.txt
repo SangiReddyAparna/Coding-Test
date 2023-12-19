@@ -1,0 +1,35 @@
+﻿import java.util.HashMap;
+import java.util.Map;
+
+public class FindDuplicates {
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 2, 7, 8, 8, 3};
+
+        findAndPrintDuplicates(array);
+    }
+
+    private static void findAndPrintDuplicates(int[] array) {
+        Map<Integer, Integer> elementCountMap = new HashMap<>();
+
+        // Count the occurrences of each element in the array
+        for (int num : array) {
+            if (elementCountMap.containsKey(num)) {
+                elementCountMap.put(num, elementCountMap.get(num) + 1);
+            } else {
+                elementCountMap.put(num, 1);
+            }
+        }
+
+       // Print elements with count greater than 1 (duplicates)
+       System.out.println("Sangi Reddy Aparna");
+        System.out.println("Student Id: AF0331204");
+
+        System.out.println("Duplicate elements in the array are:");
+        for (Map.Entry<Integer, Integer> entry : elementCountMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey());
+            }
+        }
+    }
+}
